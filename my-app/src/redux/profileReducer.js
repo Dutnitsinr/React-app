@@ -1,4 +1,16 @@
-const profileReducer = (state, action) => {
+let initialState = {
+  posts: [
+    {id: 1,message:"hello, how are you?", likeCount: 20, age:20},
+    {id: 2,message:"hello, im ok", likeCount: 15, age:15},
+    {id: 3,message:"blalblak", likeCount: 15, age:15},
+    {id: 4,message:"hello, im bad", likeCount: 15, age:15},
+  
+  ],
+  newPostText: "it-kamasutra.com"
+}
+
+
+const profileReducer = (state=initialState, action) => {
 
     
     if(action.type === 'ADD-POST'){

@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 import Sidebar from './Sidebar/sidebar'
 
 const Navbar = (props) => {
-    let sidebarName = props.state.users.map((el) => {
+    let sidebarName = props.store.getState().sidebar.users.map((el) => {
         return <Sidebar name={el.name} img={el.img}/>
     })
     return (

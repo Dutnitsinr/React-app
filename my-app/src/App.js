@@ -19,7 +19,7 @@ const App = (props) => {
     <BrowserRouter>
       <div className="app-wrapper">
       <Header/>
-      <Navbar state={props.state.sidebar}/>
+      <Navbar store={props.store}/>
       
       <div className="app-wrapper-content">
               {/* <Route path="/dialogs" component={Dialogs}/>
