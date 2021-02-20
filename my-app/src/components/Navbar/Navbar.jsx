@@ -3,9 +3,9 @@ import {NavLink} from 'react-router-dom'
 import Sidebar from './Sidebar/sidebar'
 
 const Navbar = (props) => {
-    let sidebarName = props.store.getState().sidebar.users.map((el) => {
-        return <Sidebar name={el.name} img={el.img}/>
-    })
+            let sidebarName = props.store.getState().sidebar.users.map((el) => {
+                return <Sidebar name={el.name} img={el.img}/>
+            })
     return (
         <nav className={s.nav}>
             <div className={`${s.item} ${s.active}`}>
@@ -31,6 +31,6 @@ const Navbar = (props) => {
              
       </nav>
     )
-}
+    }
 
 export default Navbar
