@@ -1,4 +1,4 @@
-import StoreContext from '../../../StoreContext'
+
 import s from './sidebar.module.css'
 
 const Sidebar = (props) => {

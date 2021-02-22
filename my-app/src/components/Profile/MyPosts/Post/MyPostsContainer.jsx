@@ -2,7 +2,7 @@
 // import Post from './Post/Post'
 import React from 'react'
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profileReducer';
-import StoreContext from '../../../../StoreContext';
+
 // import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer'
 import MyPosts from '../MyPosts'
 import {connect} from 'react-redux'
