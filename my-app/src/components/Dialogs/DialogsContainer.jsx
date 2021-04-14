@@ -6,24 +6,24 @@ import React from 'react'
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/dialogsReducer'
 import Dialogs from './Dialogs'
 import {connect} from 'react-redux'
+import { WithAuthRedirect } from '../hoc/WithAuthRedirect'
+import { compose } from 'redux'
 
 
 
 let mapStateToProps = ( state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updateNewMessageBody: (body) => {
-            dispatch(updateNewMessageBodyCreator(body))
-        },
-        sendMessage: () => {
-            dispatch(sendMessageCreator())
-        }
-    }
-}
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 
-export default DialogsContainer
+
+export default compose(
+    connect(mapStateToProps, {
+        updateNewMessageBody: updateNewMessageBodyCreator,
+        sendMessage: sendMessageCreator
+    }),
+    WithAuthRedirect
+    
+    )(Dialogs)
