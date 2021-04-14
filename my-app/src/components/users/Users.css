@@ -1,0 +1,19 @@
+.image {
+    width: 50px;
+}
+
+.item {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.selectedPage {
+    font-size: 30px;
+    background-color: white;
+}
+
+.pageSel {
+    margin: 5px;
+}

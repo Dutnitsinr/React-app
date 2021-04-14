@@ -7,3 +7,13 @@
     width: 20px;
     
 }
+
+.loginBlock {
+    float: right;
+    font-size: 30px;
+}
+
+.loginBlock a {
+    color: brown;
+
+}
