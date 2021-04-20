@@ -1,43 +1,32 @@
 import { Redirect } from 'react-router'
 import Loader from '../../Loader/Loader'
-import s  from './ProfileInfo.module.css'
+import './ProfileInfo.css'
 import ProfileStatus from './ProfileStatusWithHook'
 
-const ProfileInfo =  (props) => {
-   
-  if(!props.profile) {
-    return <Loader/>
-  }
-  
-    return (
-    <div >
-       
-      <div>
-        <img src="https://mirpozitiva.ru/wp-content/uploads/2019/11/1477469639_vodnaya_dlad.jpg" className={s.mainImage}/>
-      </div>
-      
-      <div className={s.content}>
-        <div>
-          <img src={props.profile.photos.large ? props.profile.photos.large  : 'https://agplenka.ru/wp-content/uploads/2020/05/ava02.jpg'} className={s.profileImage}/>
+const ProfileInfo = (props) => {
 
-        </div>
-        <ProfileStatus {...props}  status={props.status} updateStatus={props.updateStatus}/>
-         
-        <div>
-          <h1>{props.profile.fullName}</h1>
-          <h2>{props.profile.aboutMe ? props.profile.aboutMe : 'aboutMe is undefined'}</h2>
-        </div>
-        <div>
-          
-          <a href={props.profile.contacts.twitter}>My TWITTER</a>
-        </div>
-        <div>
-          <h2>{`Ищу работу: ${props.profile.lookingForAJob ? 'да' : 'нет'}`}</h2>
-        </div>
+  if (!props.profile) {
+    return <Loader />
+  }
+
+  return (
+    <div className={'content'}>
+      <div>
+        <img src={props.profile.photos.large ? props.profile.photos.large : 'https://agplenka.ru/wp-content/uploads/2020/05/ava02.jpg'} className={'profileImage'} />
+
       </div>
-       
+      <div className={'info'}>
+        <h1>{props.profile.fullName}</h1>
+        <h3 className={'status'}>status: <ProfileStatus {...props} status={props.status} updateStatus={props.updateStatus} /></h3> 
+
+        <h4>{props.profile.aboutMe ? props.profile.aboutMe : 'Пользователь не установил информацию о себе'}</h4>
+
+        <h4>{`В поиске работе: ${props.profile.lookingForAJob ? 'да' : 'нет'}`}</h4>
+
+      </div>
+
     </div>
-    )
-    }
+  )
+}
 
 export default ProfileInfo

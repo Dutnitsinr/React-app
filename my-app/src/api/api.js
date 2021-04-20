@@ -53,6 +53,13 @@ export const authAPI = {
     }
 }
 
+export const newsAPI = {
+    getNews() {
+        return axios.get('https://newsapi.org/v2/everything?q=keyword&apiKey=cd44970689ac40d7a9e71d4ff5fa25dd')
+        
+    }
+}
+
 
 
 

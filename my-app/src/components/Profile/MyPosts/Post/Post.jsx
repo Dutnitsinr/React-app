@@ -1,24 +1,14 @@
-import s  from './Post.module.css'
+import  './Post.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Post = (props) => {
-    return (
-      
-     
-        <div className={s.item}>
-        <img src="https://wallpaperaccess.com/full/1906981.jpg" alt=""/>
+  return (
+    <div className={'post'}>
+      <h1 className={'postText'}>{props.message}</h1> 
+      <button onClick={() => props.deletePost(props.id)} className={'btn btn-primary'}> Удалить пост</button>
 
-          {props.message}
-          
-          <div> 
-            <span>like: {props.likeCount}</span>
-          </div>
-          <input value="5"/>
-          <input value="6"/>
-
-        </div>
-      
-    
-    )
-    }
+    </div>
+  )
+}
 
 export default Post

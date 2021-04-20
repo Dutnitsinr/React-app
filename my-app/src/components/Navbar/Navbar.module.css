@@ -1,7 +1,9 @@
 .nav{
     grid-area: n;
-    background-color: burlywood;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
+    border-right: 1px solid black;
+    height: 1010px;
 }
 
 a{
@@ -10,7 +12,7 @@ a{
 }
 
 .item a{
-    color: white;
+    color: rgb(152, 166, 243);
     font-size: 30px;
 }
 

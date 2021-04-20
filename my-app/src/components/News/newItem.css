@@ -1,0 +1,15 @@
+.newsItemImage {
+    width: 500px;
+    
+}
+
+.newsItem{
+    width:700px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px;
+}
+
+.newsItemImageContainer{
+    text-align: center;
+}

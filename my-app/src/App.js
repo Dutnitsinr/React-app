@@ -9,6 +9,7 @@ import News from '../src/components/News/News'
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersComponent from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './Login/Login';
@@ -16,7 +17,7 @@ import { connect } from 'react-redux';
 import {initializeApp} from './redux/app-reducer'
 import { compose } from 'redux';
 import Loader from './components/Loader/Loader';
-import UsersContainer from '../src/components/Users/UsersContainer'
+
  
 class App extends React.Component {
   componentDidMount() {
@@ -40,17 +41,15 @@ class App extends React.Component {
                   <Route path="/music" component={Music}/>
                   <Route path="/settings" component={Settings}/> */}
   
-                  <Route path="/dialogs" render={ ()=> <DialogsContainer 
+                  {/* <Route path="/dialogs" render={ ()=> <DialogsContainer 
                   
-                  />}/>
+                  />}/> */}
                   <Route path="/profile/:userId?" render={ ()=> <ProfileContainer
                   
                     
                   />}/>
                   <Route path="/news" render={ ()=> <News/>}/>
-                  <Route path="/music" render={ ()=> <Music/>}/>
-                  <Route path="/settings" render={ ()=> <Settings/>}/>
-                  <Route path="/users" render={() => <UsersContainer/>}/>
+                  <Route path="/users" render={() => <UsersComponent/>}/>
                   <Route path="/login" render={() => <Login/>}/>
   
                   
@@ -73,5 +72,4 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {initializeApp})(App)
-  
 

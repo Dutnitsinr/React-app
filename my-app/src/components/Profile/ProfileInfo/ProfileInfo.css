@@ -1,0 +1,20 @@
+
+.content{
+    padding: 10px;
+    display: flex;
+}
+
+.profileImage {
+    width: 300px;
+    height: 300px;
+}
+
+.status {
+    display: flex;
+}
+
+.info{
+    margin: 1em;
+    border: 1px solid black;
+    padding: 5px;
+}

@@ -1,11 +1,12 @@
 .header{
     grid-area: h;
-    background-color: rgb(4, 124, 34);
+   border-bottom: 1px solid black;
 }
 
 .header img{
-    width: 20px;
-    
+    width: 50px;
+    margin-left: 1em;
+
 }
 
 .loginBlock {
@@ -16,4 +17,13 @@
 .loginBlock a {
     color: brown;
 
+}
+
+.name{
+    margin: 5px;
+}
+
+.headerImage {
+    margin-top: 0.5em;
+    
 }

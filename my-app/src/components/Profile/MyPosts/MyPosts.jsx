@@ -12,21 +12,11 @@ const maxLenghtConstans = maxLengthCreator(10)
 const MyPosts = (props) => {
    
   let postElement = props.posts.map(el => {
-    return  <Post message={el.message} likeCount={el.likeCount}/>
+    return  <Post message={el.message} likeCount={el.likeCount} id={el.id} deletePost={props.deletePost}/>
   })
   const onSubmit = (body) => {
     props.addPost(body.postText)
   }
-   
-
-  let onAddPost = () => {
-    
-    props.addPost()
-    // props.dispatch(addPostActionCreator())
-    
-  }
-
-  
 
     return (
       <div className={s.postEdit}>
@@ -48,7 +38,6 @@ const PostForm = (props) => {
     <form onSubmit={props.handleSubmit}>
       <Field  name={'postText'} placeholder={'new post text'} component={Textarea} validate={[required, maxLenghtConstans]}/>
       <button >Add Post</button>
-     <button>Remove</button>
     </form>
      
    

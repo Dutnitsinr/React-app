@@ -1,0 +1,12 @@
+.post{
+  color: rgb(5, 1, 0); 
+  font-size: 30px;
+  padding: 2px;
+  display: flex;
+}
+.postText {
+  width: 400px;
+  border: 1px solid rgb(8, 8, 8);
+  margin: 3px;
+}
+

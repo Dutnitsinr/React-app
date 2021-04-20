@@ -1,7 +1,7 @@
 // import s  from './MyPosts.module.css'
 // import Post from './Post/Post'
 import React from 'react'
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profileReducer';
+import { addPostActionCreator, updateNewPostTextActionCreator, deletePost } from '../../../../redux/profileReducer';
 
 // import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer'
 import MyPosts from '../MyPosts'
@@ -21,7 +21,8 @@ const mapStateToProps = (state) => {
 
 const ProfileContainer = connect(mapStateToProps, {
   updateNewPostText: updateNewPostTextActionCreator,
-  addPost: addPostActionCreator
+  addPost: addPostActionCreator,
+  deletePost
 
 })(MyPosts)
 

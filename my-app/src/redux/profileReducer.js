@@ -20,7 +20,7 @@ const profileReducer = (state=initialState, action) => {
     switch(action.type){
         case 'ADD-POST':
           let newPost = {
-          id: 5, 
+          id: state.posts.length + 1, 
           message: action.body,
           likeCount: 0
         }
@@ -48,6 +48,14 @@ const profileReducer = (state=initialState, action) => {
         ...state,
         status: action.status
       }
+    case 'DELETE_POST': {
+      return {
+        ...state,
+        posts: state.posts.filter(item => {
+          return item.id !== action.id
+        })
+      }
+    }
       default: return state
       }
      
@@ -70,6 +78,10 @@ export const setUserProfile = (profile) => {
 
 export const setUserStatus = (status) => {
   return {type: 'SET_USER_STATUS', status}
+}
+
+export const deletePost = (id) => {
+  return {type: 'DELETE_POST', id}
 }
 
 export const getUser = (userId) => (dispatch) => {
